@@ -6,7 +6,7 @@ import com.proyecto.Alkemy.entidades.Personaje;
 import com.proyecto.Alkemy.repositorios.PersonajeRepositorio;
 import com.proyecto.Alkemy.servicios.PersonajeServicio;
 import java.util.List;
-import mapper.PersonajeMapper;
+import com.proyecto.Alkemy.mapper.PersonajeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ public class PersonajeServicioImpl implements PersonajeServicio{
     
     public List<PersonajeDTO> getAll(){
         List<Personaje> personajes = repositorio.findAll();
-        List<PersonajeDTO> resultado = mapper.entidadPersonajeList2DTOList(personajes, false);
+        List<PersonajeDTO> resultado = mapper.entidadPersonajeList2DTOList(personajes);
         return resultado;
     }
 
